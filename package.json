@@ -5,6 +5,11 @@
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
+    "import-users": "pnpx sanity@latest migration run import-wp --no-dry-run --type=users",
+    "import-categories": "pnpx sanity@latest migration run import-wp --no-dry-run --type=categories",
+    "import-pages": "pnpx sanity@latest migration run import-wp --no-dry-run --type=pages",
+    "import-posts": "pnpx sanity@latest migration run import-wp --no-dry-run --type=posts",
+    "import-tags": "pnpx sanity@latest migration run import-wp --no-dry-run --type=tags",
     "dev": "sanity dev",
     "start": "sanity start",
     "build": "sanity build",
@@ -16,6 +21,7 @@
   ],
   "dependencies": {
     "@sanity/icons": "^3.7.4",
+    "@sanity/uuid": "^3.0.2",
     "@sanity/vision": "^4.6.0",
     "react": "^19.1",
     "react-dom": "^19.1",

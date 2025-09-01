@@ -20,6 +20,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/client": "^7.10.0",
     "@sanity/icons": "^3.7.4",
     "@sanity/uuid": "^3.0.2",
     "@sanity/vision": "^4.6.0",

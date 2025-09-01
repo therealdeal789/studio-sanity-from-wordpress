@@ -4,6 +4,7 @@ import type {SanityClient} from 'sanity'
 import type {WP_REST_API_Post} from 'wp-types'
 
 import type {Post} from '../../../sanity.types'
+import {htmlToBlockContent} from './htmlToBlockContent'
 import {sanityIdToImageReference} from './sanityIdToImageReference'
 import {sanityUploadFromUrl} from './sanityUploadFromUrl'
 import {wpImageFetch} from './wpImageFetch'
@@ -83,6 +84,10 @@ export async function transformToPost(
         }
       }
     }
+  }
+
+  if (wpDoc.content) {
+    doc.content = await htmlToBlockContent(wpDoc.content.rendered, client, existingImages)
   }
 
   return doc

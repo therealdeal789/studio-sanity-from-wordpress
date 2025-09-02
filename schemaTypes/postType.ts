@@ -7,7 +7,14 @@ export const postType = defineType({
   type: 'document',
   icon: ComposeIcon,
   fields: [
-    defineField({name: 'title', type: 'string'}),
+    defineField({
+      name: 'title',
+      type: 'string',
+      validation: (Rule) =>
+        Rule.required()
+          .max(60)
+          .warning('Max 60 tecken i titeln')
+    }),
     defineField({name: 'slug', type: 'slug'}),
     defineField({name: 'date', type: 'datetime'}),
     defineField({name: 'modified', type: 'datetime'}),
@@ -35,7 +42,9 @@ export const postType = defineType({
       type: 'text',
       rows: 3,
       description: 'Kort introduktion som visas före huvudartikeln',
-      validation: (Rule) => Rule.max(320),
+      validation: (Rule) =>
+        Rule.max(180)
+          .warning('Max 180 tecken i ingressen')
     }),
     // <<<
 

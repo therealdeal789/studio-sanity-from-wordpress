@@ -27,6 +27,18 @@ export const postType = defineType({
         ],
       },
     }),
+
+    // >>> NYTT FÄLT FÖR INGRESS
+    defineField({
+      name: 'ingress',
+      title: 'Ingress',
+      type: 'text',
+      rows: 3,
+      description: 'Kort introduktion som visas före huvudartikeln',
+      validation: (Rule) => Rule.max(320),
+    }),
+    // <<<
+
     defineField({
       name: 'content',
       type: 'portableText',

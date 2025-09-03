@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'Studio Sanity from WordPress',
+  title: 'Aktier.se',
 
   projectId: 'xkpa15s8',
   dataset: 'production',
